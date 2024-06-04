@@ -153,7 +153,6 @@ gage_metadata = get_metadata(
 gage_metadata = [i for i in gage_metadata if "roaring" in i["name"].lower()]
 all_metadata = met_metadata + reservoir_metadata + gage_metadata
 
-from sys import base_prefix
 import datetime
 
 import folium
@@ -240,6 +239,9 @@ def get_monthly_data_chart_popup(station):
     else:
         popup = folium.Popup("No data!")
     return popup
+
+import folium
+import requests
 
 map = folium.Map(
     location=[39.23, -106.90],
